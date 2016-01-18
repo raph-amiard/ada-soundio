@@ -3,6 +3,6 @@ project Soundio is
     for Object_Dir use "obj";
 
     package Linker is
-       for Default_Switches ("ada") use ("-lsoundio");
+       for Default_Switches ("ada") use ("-Llibsoundio/install", "-lsoundio");
     end Linker;
 end Soundio;
