@@ -12,6 +12,11 @@ if [ ! -d "libsoundio-install" ]; then
     cmake ../
     make
     cp *.so* *.a ../../install
+else
+    cd libsoundio/clone/build
+    cmake ../
+    make
+    cp *.so* *.a ../../install
 fi
 
 echo "$DIR"
