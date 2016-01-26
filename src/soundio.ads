@@ -10,6 +10,8 @@ package Soundio is
 
    SOUNDIO_MAX_CHANNELS : constant := 24;
 
+   SoundIo_Exception : exception;
+
    type SoundIo_Error is
      (Error_None,
       Error_NoMem,
@@ -169,6 +171,8 @@ package Soundio is
 
    use System;
    DFE : System.Bit_Order renames System.Default_Bit_Order;
+
+   procedure Check_Error (Error : SoundIo_Error);
 
    function Format_S16NE return SoundIo_Format is
      (if DFE = Low_Order_First then Format_S16LE else Format_S16BE);

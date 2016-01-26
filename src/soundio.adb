@@ -40,4 +40,15 @@ package body Soundio is
       return Area_Ptr.all;
    end Get_Area;
 
+   -----------------
+   -- Check_Error --
+   -----------------
+
+   procedure Check_Error (Error : SoundIo_Error) is
+   begin
+      if Error /= Error_None then
+         raise SoundIo_Exception with "Error";
+      end if;
+   end Check_Error;
+
 end Soundio;
